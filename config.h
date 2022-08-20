@@ -17,7 +17,7 @@ static const char col_gray1[]       = "#282c34";
 static const char col_gray2[]       = "#282c34";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#808080";
+static const char col_cyan[]        = "#924441";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -42,7 +42,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -99,11 +99,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("brave") },
-	{ MODKEY,			XK_q,		spawn,		SHCMD("pcmanfm") },
+	{ MODKEY,			XK_q,		spawn,		SHCMD("thunar") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("st -e newsboat") },
 	{ MODKEY,			XK_v,		spawn,		SHCMD("st -e lf ~/yt") },
 	{ MODKEY,			XK_o,		spawn,		SHCMD("st -e cointop") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e weechat") },
+	{ MODKEY,                       XK_y,           spawn,          SHCMD("dunstctl close_current") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
